@@ -1,0 +1,241 @@
+@import "mixins";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(11, 15, 20, 1);
+    @include font_style(16px, 400, white);
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    @include font_style(18px, 700, white);
+    box-shadow: 1px 0 0 1px rgba(209, 192, 43, 0.534);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0 10px;
+
+        a {
+            width: 80px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s linear;
+
+            &:hover {
+                color: rgba(209, 193, 43, 1);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .feet {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0 15px;
+
+        img {
+            width: 40px;
+            cursor: pointer;
+        }
+    }
+}
+
+.container_home {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+
+    img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    p {
+        @include font_style(18px, 700, white);
+        text-shadow: 2px 0 1px rgba(209, 193, 43, 1);
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+
+    img {
+        margin-right: 10px;
+        width: 200px;
+        height: 50px;
+    }
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 600px;
+    @include font_style(18px, 700, rgba(11, 15, 20, 1));
+    box-shadow: 1px 2px 4px rgba(209, 193, 43, 1);
+
+    img {
+        max-width: 100%;
+        height: 200px;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+
+    button {
+        background: rgba(11, 15, 20, 1);
+        @include font_style(14px, 700, rgba(209, 193, 43, 1));
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+            background: #555;
+        }
+    }
+}
+
+.product-details {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    img {
+        max-width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    @include font_style(18px, 700, rgba(11, 15, 20, 1));
+    box-shadow: 1px 2px 4px rgba(209, 193, 43, 1);
+    margin-bottom: 10px;
+
+    img {
+        max-width: 80px;
+        max-height: 80px;
+        object-fit: contain;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    @include font_style(18px, 700, rgba(11, 15, 20, 1));
+    box-shadow: 1px 2px 4px rgba(209, 193, 43, 1);
+
+    form {
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        button {
+            background: rgba(11, 15, 20, 1);
+            @include font_style(14px, 700, rgba(209, 193, 43, 1));
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background: rgb(26, 38, 53);
+            }
+        }
+    }
+}
+
+.form-container input,
+textarea,
+select {
+    @include font_style(14px, 700, rgba(11, 15, 20, 1));
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 5px 10px;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px 0;
+
+        nav {
+            flex-wrap: wrap;
+        }
+    }
+
+    .container_home {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px 0;
+        text-align: center;
+
+        img {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        p {
+
+            @include font_style(18px, 700, white);
+            text-shadow: 2px 0 1px rgb(177, 175, 164);
+        }
+    }
+
+    header nav a {
+        margin-left: 10px;
+    }
+}
