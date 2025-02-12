@@ -21,7 +21,7 @@ const ProductItem = React.memo(({ product }) => {
         <div className="product-item" onClick={handleClick} style={{cursor: 'pointer'}}>
             <img src={product.image} alt={product.title} />
             <h3>{product.title}</h3>
-            <p>Цена: ${product.price}</p>
+            <p>Цена: {product.price} руб.</p>
             <button onClick={handleAddToCart}>Добавить в корзину</button>
         </div>
     );

@@ -5,7 +5,7 @@ export const getProducts = () => {
     return async (dispatch) => {
         try {
             const response = await api.getProductList();
-            dispatch(actions.setProducts(response.data));
+            dispatch(actions.setProducts(response.productsData)); // Исправлено здесь
         } catch (error) {
             console.error("Error fetching data:", error);
         }

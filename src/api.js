@@ -1,7 +1,10 @@
-import axios from 'axios';
-
-const API_BASE_URL = 'https://fakestoreapi.com';
+import productsData from './data/products.json';
 
 export const getProductList = async () => {
-   return await axios.get(`${API_BASE_URL}/products`);
-}
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ productsData });
+            console.log(productsData)
+        }, 500);
+    });
+};
